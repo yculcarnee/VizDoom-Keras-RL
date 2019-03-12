@@ -306,7 +306,7 @@ if __name__ == "__main__":
         x_t1 = np.reshape(x_t1, (1, img_rows, img_cols, 1))
         s_t1 = np.append(x_t1, s_t[:, :, :, :3], axis=3)
 
-        r_t = agent.shape_reward(r_t, misc, prev_misc, t)
+        #r_t = agent.shape_reward(r_t, misc, prev_misc, t)
 
         if (is_terminated):
             life = 0
