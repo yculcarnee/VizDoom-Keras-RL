@@ -24,8 +24,11 @@ import itertools as it
 from time import sleep
 import tensorflow as tf
 
+import cv2
+
 from networks import Networks
 
+path_work_dir = "ddqnvid/"
 
 def preprocessImg(img, size):
 
@@ -34,7 +37,14 @@ def preprocessImg(img, size):
     img = skimage.color.rgb2gray(img)
 
     return img
+
+size = (640, 480)
+fps = 30.0 #/ frame_repeat
+fourcc = cv2.VideoWriter_fourcc(*'XVID')  # cv2.cv.CV_FOURCC(*'XVID')
+out_video = cv2.VideoWriter(path_work_dir + "test.avi", fourcc, fps, size)
     
+def writeVideo(img):
+    out_video.write(img)
 
 class DoubleDQNAgent:
 
@@ -237,7 +247,9 @@ if __name__ == "__main__":
     agent.target_model = Networks.dqn(state_size, action_size, agent.learning_rate)
 
     x_t = game_state.screen_buffer # 480 x 640
+    writeVideo(x_t)
     x_t = preprocessImg(x_t, size=(img_rows, img_cols))
+    
     s_t = np.stack(([x_t]*4), axis=2) # It becomes 64x64x4
     s_t = np.expand_dims(s_t, axis=0) # 1x64x64x4
 
@@ -286,8 +298,10 @@ if __name__ == "__main__":
             game_state = game.get_state()
             misc = game_state.game_variables
             x_t1 = game_state.screen_buffer
+            writeVideo(x_t1)
 
         x_t1 = game_state.screen_buffer
+        writeVideo(x_t1)
         misc = game_state.game_variables
 
         x_t1 = preprocessImg(x_t1, size=(img_rows, img_cols))
