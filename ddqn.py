@@ -28,7 +28,7 @@ import cv2
 
 from networks import Networks
 
-path_work_dir = "ddqnvid/"
+path_work_dir = "ViZDoom-Keras-RL/"
 
 size = (640, 480)
 fps = 30.0 #/ frame_repeat
@@ -357,7 +357,7 @@ if __name__ == "__main__":
                 life_buffer, ammo_buffer, kills_buffer = [], [], [] 
 
                 # Write Rolling Statistics to file
-                with open("statistics/ddqn_stats.txt", "w") as stats_file:
+                with open("statistics/ddqn_stats.txt", "w+") as stats_file:
                     stats_file.write('Game: ' + str(GAME) + '\n')
                     stats_file.write('Max Score: ' + str(max_life) + '\n')
                     stats_file.write('mavg_score: ' + str(agent.mavg_score) + '\n')
