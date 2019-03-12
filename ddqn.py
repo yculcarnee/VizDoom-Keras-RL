@@ -28,7 +28,7 @@ import cv2
 
 from networks import Networks
 
-path_work_dir = "ViZDoom-Keras-RL/"
+path_work_dir = "drive/vidz/"
 
 size = (640, 480)
 fps = 30.0 #/ frame_repeat
@@ -329,7 +329,7 @@ if __name__ == "__main__":
         # save progress every 10000 iterations
         if t % 10000 == 0:
             print("Now we save model")
-            agent.model.save_weights("models/ddqn.h5", overwrite=True)
+            agent.model.save_weights("drive/ddqn/models/ddqn.h5", overwrite=True)
 
         # print info
         state = ""
