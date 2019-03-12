@@ -223,7 +223,7 @@ if __name__ == "__main__":
     K.set_session(sess)
 
     game = DoomGame()
-    game.load_config("../../scenarios/defend_the_center.cfg")
+    game.load_config("ViZDoom/scenarios/defend_the_center.cfg")
     game.set_sound_enabled(True)
     game.set_screen_resolution(ScreenResolution.RES_640X480)
     game.set_window_visible(False)
