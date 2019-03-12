@@ -357,11 +357,11 @@ if __name__ == "__main__":
                 life_buffer, ammo_buffer, kills_buffer = [], [], [] 
 
                 # Write Rolling Statistics to file
-                with open("statistics/ddqn_stats.txt", "w+") as stats_file:
+               """ with open("drive/statistics/ddqn_stats.txt", "w+") as stats_file:
                     stats_file.write('Game: ' + str(GAME) + '\n')
                     stats_file.write('Max Score: ' + str(max_life) + '\n')
                     stats_file.write('mavg_score: ' + str(agent.mavg_score) + '\n')
                     stats_file.write('var_score: ' + str(agent.var_score) + '\n')
                     stats_file.write('mavg_ammo_left: ' + str(agent.mavg_ammo_left) + '\n')
-                    stats_file.write('mavg_kill_counts: ' + str(agent.mavg_kill_counts) + '\n')
+                    stats_file.write('mavg_kill_counts: ' + str(agent.mavg_kill_counts) + '\n')"""
 
