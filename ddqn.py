@@ -327,9 +327,9 @@ if __name__ == "__main__":
         t += 1
 
         # save progress every 10000 iterations
-        if t % 10000 == 0:
-            print("Now we save model")
-            agent.model.save_weights("drive/ddqn/models/ddqn.h5", overwrite=True)
+        #if t % 10000 == 0:
+        #    print("Now we save model")
+        #    agent.model.save_weights("drive/ddqn/models/ddqn.h5", overwrite=True)
 
         # print info
         state = ""
